@@ -1,0 +1,111 @@
+/* Global font size increase by 3px */
+.main .block-container {
+  font-size: 17px !important; /* Streamlit default is ~14px */
+}
+
+/* Streamlit specific elements font size increases */
+.stMarkdown p, .stMarkdown li, .stMarkdown span {
+  font-size: 17px !important;
+}
+
+.stSelectbox label, .stFileUploader label, .stButton button {
+  font-size: 17px !important;
+}
+
+.stDataFrame, .stTable {
+  font-size: 17px !important;
+}
+
+.stMetric {
+  font-size: 17px !important;
+}
+
+.stMetric .metric-label {
+  font-size: 17px !important;
+}
+
+.stMetric .metric-value {
+  font-size: 23px !important; /* Larger for metric values */
+}
+
+h1, .stTitle {
+  font-size: 35px !important; /* H1 default ~32px */
+}
+
+h2 {
+  font-size: 28px !important; /* H2 default ~25px */
+}
+
+h3 {
+  font-size: 23px !important; /* H3 default ~20px */
+}
+
+.stTabs [data-baseweb="tab-list"] button {
+  font-size: 17px !important;
+}
+
+.stExpander {
+  font-size: 17px !important;
+}
+
+.stSuccess, .stInfo, .stWarning, .stError {
+  font-size: 17px !important;
+}
+
+/* Table styles for both light and dark mode */
+.cost-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  color: #222;
+}
+.cost-table th, .cost-table td {
+  border: 1px solid #bbb;
+  padding: 8px;
+  text-align: right;
+  font-size: 17px; /* Increased by 3px from default */
+}
+.cost-table th {
+  background-color: #f2f2f2;
+  color: #222;
+  text-align: center;
+}
+.cost-table td.left {
+  text-align: left;
+}
+.cost-table .section {
+  font-weight: bold;
+  background: #e9ecef;
+  color: #222;
+}
+.cost-table .total {
+  font-weight: bold;
+  background: #d4f5dd;
+  color: #222;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  .cost-table {
+    background: #18191A;
+    color: #F5F6FA;
+  }
+  .cost-table th {
+    background-color: #23272F;
+    color: #F5F6FA;
+  }
+  .cost-table td.left {
+    color: #F5F6FA;
+  }
+  .cost-table .section {
+    background: #23272F;
+    color: #F5F6FA;
+  }
+  .cost-table .total {
+    background: #1E5128;
+    color: #F5F6FA;
+  }
+  .cost-table th, .cost-table td {
+    border: 1px solid #333;
+  }
+}
