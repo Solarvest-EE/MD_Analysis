@@ -8,6 +8,8 @@ import math
 import warnings
 from datetime import datetime, timedelta
 
+from monthly_rate_impact import show as show_monthly_rate_impact_analysis
+
 warnings.filterwarnings('ignore')
 
 # Import required modules
@@ -35,8 +37,8 @@ if 'global_afa_rate' not in st.session_state:
 
 global_afa_rate_cent = st.sidebar.number_input(
     "AFA Rate (cent/kWh)", 
-    min_value=-10.0, 
-    max_value=10.0, 
+    min_value=0.0, 
+    max_value=3.0, 
     value=st.session_state.global_afa_rate, 
     step=0.1,
     help="Current AFA rate in cents per kWh. Used for RP4 tariff calculations."
@@ -84,12 +86,16 @@ def read_uploaded_file(file):
 st.title("⚡ Maximum Demand Shaving Analysis")
 st.markdown("**Comprehensive MD shaving analysis with battery energy storage solutions**")
 
-tabs = st.tabs(["🔧 MD Shaving Solution", "🔋 Advanced MD Shaving"])
+tabs = st.tabs(["🔧 MD Shaving Solution", "💰 Monthly Rate Impact Analysis", "🔋 Advanced MD Shaving"])
 
 with tabs[0]:
     show_md_shaving_solution()
 
 with tabs[1]:
+    # Use the modular Monthly Rate Impact Analysis
+    show_monthly_rate_impact_analysis()
+
+with tabs[2]:
     # 🔋 Advanced MD Shaving Tab (Copy the entire content from your original file)
     # [Insert the complete Tab 6 content from lines 795+ of your original streamlit_app.py]
     # This is the same content as in your original file for Tab 6
